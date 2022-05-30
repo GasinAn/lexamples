@@ -1,6 +1,6 @@
 # lexamples
-Small .tex files which show the basics of using LaTeX.
+Small .tex files which show the basics of using LaTeX
 
-lexamples.tex: English version.
+lexamples.tex: English version
 
-clexamples.tex: simplified Chinese version.
+clexamples.tex: simplified Chinese version
