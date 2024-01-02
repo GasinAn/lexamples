@@ -6,12 +6,15 @@
 \usepackage{hyperref} % 超链接
 \usepackage{syntonly} % 仅语法检查
 \usepackage{textcomp} % 特殊符号
+\usepackage{ulem} % 内容强调
 \usepackage{verbatim} % 长注释
 %\syntaxonly
 \hyphenation{}
+\normalem
 \hypersetup{colorlinks}
 \title{\LaTeX{}范例集}
 \author{GasinAn}
+%\date{2024年1月1日}
 \begin{document}
     \maketitle
     这是一份\LaTeX{}基础范例集!
@@ -22,8 +25,8 @@
 
     这话儿才是在第二段!
     \subsection{特殊字符}
-    \~ \# \$ \% \^ \& \_ \{ \} \\ % 这是错的!
-    \~{} \# \$ \% \^{} \& \_ \{ \} \\ \textbackslash % 这是对的!
+    错: \~ \# \$ \% \^ \& \_ \{ \} \\
+    对: \~{} \#{} \${} \%{} \^{} \&{} \_{} \{{} \}{} \textbackslash{}
     \section{排版}
     \subsection{强制分行}
     这话儿在第一行.\newline
@@ -60,19 +63,23 @@
     \subsection{省略号}
     这样不好...
 
-    这样好!\dots
+    这样好!\dots{}
 
-    这样也好!\ldots
+    这样也好!\ldots{}
 
     这样也好！……
     \subsection{交叉引用}\label{ref}
-    像这样引用本小节: ``见第 \pageref{ref} 页的第 \ref{ref} 小节. ''
+    像这样引用本小节: ``见第~\pageref{ref}~页的第~\ref{ref}~小节.''
     \subsection{脚注}
     给整句话或话的一部分加的脚注要放在句号后.\footnote{这是个可爱的小脚注.}
     \subsection{强调}
-    强调\emph{强调}强调
+    强调强调\uline{强调}强调强调
 
-    \textit{强调\emph{强调}强调}
+    \textit{强调强调\uline{强调}强调强调}
+
+    强调强调\emph{强调}强调强调
+
+    \textit{强调强调\emph{强调}强调强调}
     \subsection{无序列表(itemize)}
     \begin{itemize}
         \item 约翰$\cdot$希金斯
@@ -156,12 +163,11 @@ end program hellolatex
     \subsection{表格}
     \begin{table}[htbp]
         \centering
-        \def\sg{施特菲$\cdot$格拉芙} % 定义新命令!
         \begin{tabular}{c|ccccc}
             \hline
             运动员 & 澳网 & 法网 & 温网 & 美网 & 奥运会\\
             \hline
-            \sg & 1988 & 1988 & 1988 & 1988 & 1988 \\
+            施特菲$\cdot{}$格拉芙 & 1988 & 1988 & 1988 & 1988 & 1988 \\
             \hline
         \end{tabular}
         \caption{年度金满贯}
@@ -191,7 +197,7 @@ end program hellolatex
         E=mc^3. \tag{$\ast$} \label{eq3}
     \end{equation}
 
-    式 \eqref{eq2} 显然是对的. 式 \eqref{eq3} 连量纲都不对\dots
+    式~\eqref{eq2} 显然是对的. 式~\eqref{eq3} 连量纲都不对\dots{}
     \subsection{文字}
     这样写是错的:
     \begin{equation*}
@@ -461,16 +467,18 @@ end program hellolatex
     \bibliographystyle{abbrv}
     \bibliography{astro}
     \section{自定义命令}
+    \def\lshortURL{https://www.ctan.org/pkg/lshort}
+    \def\lnotesURL{https://github.com/huangxg/lnotes}
     \newcommand{\isgood}[3][是好的]{\href{#3}{#2} #1!}
 
-    \isgood{lshort}{https://www.ctan.org/pkg/lshort}
+    \isgood{lshort}{\lshortURL}
 
-    \isgood[也是好的]{lnotes}{https://github.com/huangxg/lnotes}
+    \isgood[也是好的]{lnotes}{\lnotesURL}
     \section{超链接}
     想让\href{clexample.pdf}{《\LaTeX{}范例集》}变得更好?
 
-    可以在~\href{https://github.com/GasinAn/lexamples}{Github}~上
+    可以在 \href{https://github.com/GasinAn/lexamples}{Github} 上
     提交pull request或issue.
 
-    也可以发邮件至~\href{mailto:Gasin185@163.com}{Gasin185@163.com}.
+    也可以发邮件至 \href{mailto:Gasin185@163.com}{Gasin185@163.com}.
 \end{document}

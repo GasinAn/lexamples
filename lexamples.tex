@@ -6,13 +6,16 @@
 \usepackage{hyperref} % Hypertext Link
 \usepackage{syntonly} % Syntax Check Only
 \usepackage{textcomp} % Special Symbols
+\usepackage{ulem} % Content Emphases
 \usepackage{verbatim} % Long Comments
 \usepackage{xeCJK} % Chinese
 %\syntaxonly
 \hyphenation{}
+\normalem
 \hypersetup{colorlinks}
 \title{\LaTeX{} Examples}
 \author{GasinAn}
+%\date{January 1, 2024}
 \begin{document}
     \maketitle
     Here are examples of using \LaTeX{}!
@@ -23,8 +26,8 @@
 
     This sentence is in the 2nd paragraph.
     \subsection{Special Characters}
-    \~ \# \$ \% \^ \& \_ \{ \} \\ % Wrong!
-    \~{} \# \$ \% \^{} \& \_ \{ \} \\ \textbackslash % Right!
+    Wrong: \~ \# \$ \% \^ \& \_ \{ \} \\
+    Right: \~{} \#{} \${} \%{} \^{} \&{} \_{} \{{} \}{} \textbackslash{}
     \section{Typesetting}
     \subsection{Line Breaking}
     This sentence is in the 1st line.\\
@@ -50,12 +53,12 @@
     $-273.15$ \textcelsius{} = $-459.67$ \textdegree{}F
     \subsection{Ellipsis}
     This is not good...\\
-    This is good!\dots\\
-    This is also good!\ldots
+    This is good!\dots{}\\
+    This is also good!\ldots{}
     \subsection{Special Letters}
-    Hello everyone, I am Schr\"odinger, and here are my brothers:
-    Schr\.odinger, Schr\=odinger, Schr\~odinger,
-    Schr\^odinger, Schr\'odinger, Schr\`odinger,
+    Hello everyone, I am Schr\" odinger, and here are my brothers:
+    Schr\. odinger, Schr\= odinger, Schr\~ odinger,
+    Schr\^ odinger, Schr\' odinger, Schr\` odinger,
     Schr\u odinger, Schr\v odinger and Schr\H odinger.
     Do you know about angstrom? Its symbol is \AA{}.
     \subsection{The Space Between Words}
@@ -68,8 +71,8 @@
     Footnotes referring to a sentence or part of it should be put
     after the comma or period.\footnote{This is a footnote.}
     \subsection{Emphasized Words}
-    emphasis emphasis \underline{emphasis} emphasis emphasis\\
-    \textit{emphasis emphasis \underline{emphasis} emphasis emphasis}\\
+    emphasis emphasis \uline{emphasis} emphasis emphasis\\
+    \textit{emphasis emphasis \uline{emphasis} emphasis emphasis}\\
     emphasis emphasis \emph{emphasis} emphasis emphasis\\
     \textit{emphasis emphasis \emph{emphasis} emphasis emphasis}
     \subsection{Itemize}
@@ -160,21 +163,20 @@ end program hellolatex
     The last line of the program can also be \verb|end| (or \verb*|      END|).
     \subsection{Table}
     \begin{table}[htbp]
-        \def\bs{$\bigstar$} % Define a new command!
         \centering
         \begin{tabular}{c|cccccc}
             \hline
             Year & Jan. & Mar. & May & July & Sept. & Nov. \\
             \hline
-            2002 &      &      &     &      &       & \bs  \\
-            2003 & \bs  &      & \bs &      & \bs   &      \\
-            2004 & \bs  & \bs  & \bs & \bs  &       & \bs  \\
-            2005 & \bs  & \bs  & \bs & \bs  & \bs   & \bs  \\
-            2006 &      & \bs  &     & \bs  & \bs   & \bs  \\
-            2007 & \bs  &      &     & \bs  &       &      \\
-            2008 &      & \bs  &     &      &       &      \\
-            2009 & \bs  &      &     &      & \bs   &      \\
-            2010 & \bs  &      &     &      &       &      \\
+            2002 &   &   &   &   &   & * \\
+            2003 & * &   & * &   & * &   \\
+            2004 & * & * & * & * &   & * \\
+            2005 & * & * & * & * & * & * \\
+            2006 &   & * &   & * & * & * \\
+            2007 & * &   &   & * &   &   \\
+            2008 &   & * &   &   &   &   \\
+            2009 & * &   &   &   & * &   \\
+            2010 & * &   &   &   &   &   \\
             \hline
         \end{tabular}
         \caption{Top Division Champion Record of Asash\=ory\=u Akinori}
@@ -438,9 +440,11 @@ end program hellolatex
     \bibliographystyle{abbrv}
     \bibliography{astro}
     \section{New Commands}
+    \def\lshortURL{https://www.ctan.org/pkg/lshort}
+    \def\lnotesURL{https://github.com/huangxg/lnotes}
     \newcommand{\isgood}[3][good]{\href{#3}{\emph{#2}} is #1!}
-    \isgood{Lshort}{https://www.ctan.org/pkg/lshort}\\
-    \isgood[also good]{Lnotes}{https://github.com/huangxg/lnotes}
+    \isgood{Lshort}{\lshortURL}\\
+    \isgood[also good]{Lnotes}{\lnotesURL}
     \section{Hypertext Links}
     Want to make \href{lexample.pdf}{\emph{\LaTeX{} Examples}} better?\\
     Start pull requests or issues on
