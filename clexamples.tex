@@ -1,5 +1,11 @@
-% 编译方式: latexmk -xelatex 或 xelatex -> bibtex -> xelatex*2
-\documentclass{ctexart}
+% 编译方式：latexmk -xelatex 或 xelatex -> bibtex -> xelatex*2
+% 纸张大小：A4
+% 字号：11 pt
+% 字体：Fandol（中文逗号，分号，冒号，引号显示成英文样式）
+\documentclass[a4paper,11pt,fontset=fandol]{ctexart}
+% 中文句号显示成英文样式
+\catcode`\。=\active
+\newcommand{。}{．}
 \usepackage{amsmath} % 数学符号 & 方程
 \usepackage{amssymb} % 特殊数学符号
 \usepackage{graphicx} % 图形 & 图像
@@ -15,30 +21,30 @@
 \allowdisplaybreaks
 \title{\LaTeX{} 范例集}
 \author{GasinAn}
-%\date{2024年1月1日}
+%\date{2024 年 1 月 1 日}
 \begin{document}
     \maketitle
-    这是一份 \LaTeX{} 基础范例集!
+    这是一份 \LaTeX{} 基础范例集！
     \section{基础}
     \subsection{段落}
-    这话儿在第一段.
-    这话儿还是在第一段.
+    这话儿在第一段。
+    这话儿还是在第一段。
 
-    这话儿才是在第二段!
+    这话儿才是在第二段！
     \subsection{特殊字符}
-    错: \~ \# \$ \% \^ \& \_ \{ \} \\
-    对: \~{} \#{} \${} \%{} \^{} \&{} \_{} \{{} \}{} \textbackslash{}
+    错：\~ \# \$ \% \^ \& \_ \{ \} \\
+    对：\~{} \#{} \${} \%{} \^{} \&{} \_{} \{{} \}{} \textbackslash{}
     \section{排版}
     \subsection{强制分行}
-    这话儿在第一行.\newline
-    这话儿在第二行.
+    这话儿在第一行。\newline
+    这话儿在第二行。
     \subsection{强制分页}
-    这话儿如果在第一页.\newpage
-    这话儿就一定在第二页.
+    这话儿如果在第一页。\newpage
+    这话儿就一定在第二页。
     \subsection{引号}
-    '错', "错".
+    '错'，"错"。
 
-    `对', ``对''.
+    `对'，``对''。
 
     ‘对’，“对”。
     \subsection{横线}
@@ -52,27 +58,27 @@
 
     $-2147483648$
     \subsection{波浪号}
-    这样不好.\~{}
+    这样不好。\~{}
 
-    这样好!$\sim$
+    这样好！$\sim$
     \subsection{角度符号}
     $361^{\circ}$
 
-    $-273.15^{\circ}\mathrm{C}$ (这样更好: $-273.15\,^{\circ}\mathrm{C}$)
+    $-273.15^{\circ}\mathrm{C}$ (这样更好：$-273.15\,^{\circ}\mathrm{C}$)
 
     $-273.15$ \textcelsius{} = $-459.67$ \textdegree{}F
     \subsection{省略号}
     这样不好...
 
-    这样好!\dots{}
+    这样好！\dots{}
 
-    这样也好!\ldots{}
+    这样也好！\ldots{}
 
     这样也好！……
     \subsection{交叉引用}\label{ref}
-    像这样引用本小节: ``见第~\pageref{ref}~页的 \ref{ref}~小节.''
+    像这样引用本小节：“见第~\pageref{ref}~页的 \ref{ref}~小节。”
     \subsection{脚注}
-    给整句话或话的一部分加的脚注要放在句号后.\footnote{这是个可爱的小脚注.}
+    给整句话或话的一部分加的脚注要放在句号后。\footnote{这是个可爱的小脚注。}
     \subsection{强调}
     强调强调\uline{强调}强调强调
 
@@ -83,9 +89,9 @@
     \textit{强调强调\emph{强调}强调强调}
     \subsection{无序列表(itemize)}
     \begin{itemize}
-        \item 约翰$\cdot$希金斯
-        \item 马克$\cdot$威廉姆斯
-        \item 罗尼$\cdot$奥沙利文
+        \item 约翰·希金斯
+        \item 马克·威廉姆斯
+        \item 罗尼·奥沙利文
     \end{itemize}
     \subsection{有序列表(enumerate)}
     \begin{enumerate}
@@ -95,17 +101,17 @@
     \end{enumerate}
     \subsection{描述列表(description)}
     \begin{description}
-        \item[蹬杆] 指以较大的力量击打母球中部, 使得母球在接触目标球之前保持无滚动的状
-        态. 效果是在母球与目标球接触后, 母球与目标球的运动方向的夹角接近
-        90\textdegree.如果与母球与目标球正碰撞, 理想状态下母球会瞬间静止. 也叫斯登或
-        司登, 英文名为 stun.
-        \item[推杆] 指以较小的力量击打母球中部, 使得母球在接触目标球之前因台面的摩擦作
-        用而最终滚向目标球. 效果是在母球与目标球接触后, 母球与目标球的运动方向的夹角小
-        于90\textdegree. 如果与母球与目标球正碰撞, 母球之后会向前运动一段距离.
+        \item[蹬杆] 指以较大的力量击打母球中部，使得母球在接触目标球之前保持无滚动的状
+        态。效果是在母球与目标球接触后，母球与目标球的运动方向的夹角接近
+        90\textdegree。如果与母球与目标球正碰撞，理想状态下母球会瞬间静止。也叫斯登
+        或司登，英文名为 stun。
+        \item[推杆] 指以较小的力量击打母球中部，使得母球在接触目标球之前因台面的摩擦作
+        用而最终滚向目标球。效果是在母球与目标球接触后，母球与目标球的运动方向的夹角小
+        于90\textdegree。如果与母球与目标球正碰撞，母球之后会向前运动一段距离。
     \end{description}
     \subsection{摘录(quote)}
     \begin{quote}
-        \dots lensed FRBs, as a powerful probe and completely independent
+        \dots{} lensed FRBs, as a powerful probe and completely independent
         dataset based on a different physical phenomenon, would provide
         complementary information and therefore are of vital importance to
         clarify the tension between the latest Planck-inferred $H_0$ and the
@@ -160,7 +166,7 @@ end program hellolatex
       PRINT *, 'HELLO, LATEX.'
       END PROGRAM HELLOLATEX
 \end{verbatim*}
-    最后一行可以改成 \verb|end| (或 \verb*|      END|).
+    最后一行可以改成 \verb|end| (或 \verb*|      END|)。
     \subsection{表格}
     \begin{table}[htbp]
         \centering
@@ -172,92 +178,92 @@ end program hellolatex
             \hline
         \end{tabular}
         \caption{年度金满贯}
-        \label{table} % Put \label here!
+        \label{table} % 标签放这里！
     \end{table}
     \subsection{图片}
     \begin{figure}[htbp]
         \centering
         \includegraphics[width=0.6\textwidth]{img/FND.jpg}
         \caption{费德勒(左)、纳达尔(右)和德约科维奇(中)}
-        \label{figure} % Put \label here!
+        \label{figure} % 标签放这里！
     \end{figure}
     \section{数学公式}
     \subsection{公式}
-    把行内公式 $E=mc^1$ 写成独立公式:
+    把行内公式 $E=mc^1$ 写成独立公式：
     \begin{equation*}
-        E=mc^1.
+        E=mc^1\text{。}
     \end{equation*}
 
-    把行内公式 $E=mc^2$ 写成有编号的独立公式:
+    把行内公式 $E=mc^2$ 写成有编号的独立公式：
     \begin{equation}
-        E=mc^2. \label{eq2}
+        E=mc^2\text{。}\label{eq2}
     \end{equation}
 
-    把行内公式 $E=mc^3$ 写成有特殊编号的独立公式:
+    把行内公式 $E=mc^3$ 写成有特殊编号的独立公式：
     \begin{equation}
-        E=mc^3. \tag{$\ast$} \label{eq3}
+        E=mc^3\text{。}\tag{$\ast$} \label{eq3}
     \end{equation}
 
-    式~\eqref{eq2} 显然是对的. 式~\eqref{eq3} 连量纲都不对\dots{}
+    式~\eqref{eq2} 显然是对的。式~\eqref{eq3} 连量纲都不对……
     \subsection{文字}
-    这样写是错的:
+    这样写是错的：
     \begin{equation*}
-        x > 0    任意 x \in R_+.
+        x > 0    任意 x \in R_+。
     \end{equation*}
 
-    这样写才是对的:
+    这样写才是对的：
     \begin{equation*}
-        x > 0 \qquad \text{任意} \; x \in \mathbb{R_+}.
+        x > 0 \qquad \text{任意} \; x \in \mathbb{R_+}\text{。}
     \end{equation*}
     \subsection{上下标}
     \begin{equation*}
-        \sum_{i=1}^{100} i = \sum^{100}_{j=1} j.
+        \sum_{i=1}^{100} i = \sum^{100}_{j=1} j\text{。}
     \end{equation*}
     \begin{equation*}
-        a^x+y \neq a^{x+y}.
+        a^x+y \neq a^{x+y}\text{。}
     \end{equation*}
     \begin{equation*}
-        e^{x^2} \neq {e^x}^2.
+        e^{x^2} \neq {e^x}^2\text{。}
     \end{equation*}
     \subsection{根号}
     \begin{equation*}
-        \sqrt{5} > \sqrt[5]{5}.
+        \sqrt{5} > \sqrt[5]{5}\text{。}
     \end{equation*}
     \subsection{函数名}
-    这样写是错的:
-    $ 2 \text{lim}_{x \rightarrow \infty} \text{arctan} x = \pi $.
+    这样写是错的：
+    $ 2 \text{lim}_{x \rightarrow \infty} \text{arctan} x = \pi $。
 
-    这样写才是对的:
-    $ 2 \lim_{x \rightarrow \infty} \arctan x = \pi $.
+    这样写才是对的：
+    $ 2 \lim_{x \rightarrow \infty} \arctan x = \pi $。
     \subsection{模函数}
     \begin{equation*}
-        5 \bmod 2 = 1.
+        5 \bmod 2 = 1\text{。}
     \end{equation*}
     \begin{equation*}
-        5 \equiv 1 \pmod{2}.
+        5 \equiv 1 \pmod{2}\text{。}
     \end{equation*}
     \subsection{分数}
     \begin{equation*}
-        \frac{\mathrm{d}^{n}y}{\mathrm{d}x^{n}}.
+        \frac{\mathrm{d}^{n}y}{\mathrm{d}x^{n}}\text{。}
     \end{equation*}
     \begin{equation*}
-        \frac{\partial^{2}z}{\partial{x}\partial{y}}.
+        \frac{\partial^{2}z}{\partial{x}\partial{y}}\text{。}
     \end{equation*}
     \subsection{二项式系数}
     \begin{equation*}
-        \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}.
+        \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}\text{。}
     \end{equation*}
     \subsection{符号堆叠}
     $ 2\text{K}\text{Mn}\text{O}_4 \stackrel{\triangle}{\longrightarrow}
-      \text{K}_2\text{Mn}\text{O}_4+\text{Mn}\text{O}_2+\text{O}_2\uparrow $,
+      \text{K}_2\text{Mn}\text{O}_4+\text{Mn}\text{O}_2+\text{O}_2\uparrow $，
     $ 2\text{H}_2\text{O}_2 \xrightarrow[]{\text{Mn}\text{O}_2}
-    2\text{H}_2\text{O}+\text{O}_2\uparrow $.
+    2\text{H}_2\text{O}+\text{O}_2\uparrow $。
 
-    第二个更好!
+    第二个更好！
 
-    数学比化学复杂多了:
+    数学比化学复杂多了：
     \begin{equation*}
-        \sum_{\substack{1\le{i}\le{n}\\j>i}} l_{ij}^2 = 0.
+        \sum_{\substack{1\le{i}\le{n}\\j>i}} l_{ij}^2 = 0\text{。}
     \end{equation*}
     \subsection{矩阵}
     \begin{equation*}
@@ -265,15 +271,15 @@ end program hellolatex
         \begin{bmatrix}
             1 & 0 \\
             0 & 1
-        \end{bmatrix}.
+        \end{bmatrix}\text{。}
     \end{equation*}
     \subsection{分段函数}
     \begin{equation*}
         |x| =
         \begin{cases}
-            -x & \text{若} \  x < 0, \\
-             0 & \text{若} \  x = 0, \\
-             x & \text{若} \  x > 0. \\
+            -x & \text{若} \  x < 0\text{，}\\
+             0 & \text{若} \  x = 0\text{，}\\
+             x & \text{若} \  x > 0\text{。}\\
         \end{cases}
     \end{equation*}
     \subsection{连等式}
@@ -281,40 +287,40 @@ end program hellolatex
         \nabla\frac{1}{r} & = \nabla\frac{1}{\sqrt{x^2+y^2+z^2}} \label{oeq}\\
             & = -\frac{x\boldsymbol{i}+y\boldsymbol{j}+z\boldsymbol{k}}
                       {\sqrt{x^2+y^2+z^2}^3} \nonumber \\
-            & = -\frac{\hat{\boldsymbol{r}}}{r^2}. \tag{$\star$} \label{beq}
+            & = -\frac{\hat{\boldsymbol{r}}}{r^2}\text{。}\tag{$\star$} \label{beq}
     \end{align}
 
-    \eqref{oeq} 能直接从定义得出. 最后的结果 \eqref{beq} 非常漂亮!
+    \eqref{oeq} 能直接从定义得出。最后的结果 \eqref{beq} 非常漂亮！
     \subsection{空格}
-    $ \text{这是} \  \text{1 space.} $
+    $ \text{这是} \  \text{1 space\text{。}} $
 
-    $ \text{这是} \! \text{-3/18 em.} $
+    $ \text{这是} \! \text{-3/18 em\text{。}} $
 
-    $ \text{这是} \, \text{3/18 em.} $
+    $ \text{这是} \, \text{3/18 em\text{。}} $
 
-    $ \text{这是} \: \text{4/18 em.} $
+    $ \text{这是} \: \text{4/18 em\text{。}} $
 
-    $ \text{这是} \; \text{5/18 em.} $
+    $ \text{这是} \; \text{5/18 em\text{。}} $
 
-    $ \text{这是} \quad \text{1 em.} $
+    $ \text{这是} \quad \text{1 em\text{。}} $
 
-    $ \text{这是} \qquad \text{2 em.} $
+    $ \text{这是} \qquad \text{2 em\text{。}} $
     \subsection{空位}
-    这样写是错的: ${}^{99}_{ 9}\text{C}R_{abc}^{   d}$.
+    这样写是错的：${}^{99}_{ 9}\text{C}R_{abc}^{   d}$。
 
-    这样写还是错的: ${}^{99}_{\ 9}\text{C}R_{abc}^{\ \ \ d}$.
+    这样写还是错的：${}^{99}_{\ 9}\text{C}R_{abc}^{\ \ \ d}$。
 
-    这样写才是对的: ${}^{99}_{\phantom{9}9}\text{C}R_{abc}^{\phantom{abc}d}$.
+    这样写才是对的：${}^{99}_{\phantom{9}9}\text{C}R_{abc}^{\phantom{abc}d}$。
     \subsection{集合}
-    这样写是错的: $\{\omega|X(\omega)\in\mathcal{B}\}$.
+    这样写是错的：$\{\omega|X(\omega)\in\mathcal{B}\}$。
 
-    这样写还是错的: $\{\omega\,|\,X(\omega)\in\mathcal{B}\}$.
+    这样写还是错的：$\{\omega\,|\,X(\omega)\in\mathcal{B}\}$。
 
-    这样写才是对的: $\{\omega\mid X(\omega)\in\mathcal{B}\}$.
+    这样写才是对的：$\{\omega\mid X(\omega)\in\mathcal{B}\}$。
     \subsection{符号小全}
-    这里解决不了的, \href{
+    这里解决不了的，\href{
         https://www.ctan.org/tex-archive/info/symbols/comprehensive
-    }{究极符号大全}来解决!
+    }{究极符号大全}来解决！
     \begin{table}[!htbp]
         \centering
         \begin{tabular}{cccccc}
@@ -468,8 +474,8 @@ end program hellolatex
     \end{table}
     \newpage
     \section{参考文献}
-    % 这里用的是 BibTeX.
-    % 也可尝试 natbib 和 biblatex.
+    % 这里用的是 BibTeX。
+    % 也可尝试 natbib 和 biblatex。
     FRBs are millisecond-duration bright radio transients
     \cite{Li2018,Lin2020}.
     \bibliographystyle{abbrv}
@@ -486,7 +492,7 @@ end program hellolatex
     想让\href{clexample.pdf}{《\LaTeX{}范例集》}变得更好?
 
     可以在 \href{https://github.com/GasinAn/lexamples}{Github}
-    上提交 pull request 或 issue.
+    上提交 pull request 或 issue。
 
-    也可以发邮件至 \href{mailto:gasin185@163.com}{gasin185@163.com}.
+    也可以发邮件至 \href{mailto:gasin185@163.com}{gasin185@163.com}。
 \end{document}
