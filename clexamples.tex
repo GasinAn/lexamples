@@ -11,6 +11,7 @@
 \usepackage{graphicx} % 图形 & 图像
 \usepackage{hyperref} % 超链接
 \usepackage{syntonly} % 仅语法检查
+\usepackage{tabularray} % （复杂） 表格
 \usepackage{textcomp} % 特殊符号
 \usepackage{ulem} % 内容强调
 \usepackage{verbatim} % 长注释
@@ -170,13 +171,13 @@ end program hellolatex
     \subsection{表格}
     \begin{table}[htbp]
         \centering
-        \begin{tabular}{c|ccccc}
+        \begin{tblr}{c|ccccc}
             \hline
             运动员 & 澳网 & 法网 & 温网 & 美网 & 奥运会\\
             \hline
-            施特菲$\cdot{}$格拉芙 & 1988 & 1988 & 1988 & 1988 & 1988 \\
+            施特菲·格拉芙 & 1988 & 1988 & 1988 & 1988 & 1988 \\
             \hline
-        \end{tabular}
+        \end{tblr}
         \caption{年度金满贯}
         \label{table} % 标签放这里！
     \end{table}

@@ -7,6 +7,7 @@
 \usepackage{graphicx} % Graphics & Images
 \usepackage{hyperref} % Hypertext Link
 \usepackage{syntonly} % Syntax Check Only
+\usepackage{tabularray} % (Complex) Tables
 \usepackage{textcomp} % Special Symbols
 \usepackage{ulem} % Content Emphases
 \usepackage{verbatim} % Long Comments
@@ -167,21 +168,21 @@ end program hellolatex
     \subsection{Table}
     \begin{table}[htbp]
         \centering
-        \begin{tabular}{c|cccccc}
+        \begin{tblr}{c|cccccc}
             \hline
             Year & Jan. & Mar. & May & July & Sept. & Nov. \\
             \hline
-            2002 &        &        &        &        &        &\verb|*|\\
-            2003 &\verb|*|&        &\verb|*|&        &\verb|*|&        \\
-            2004 &\verb|*|&\verb|*|&\verb|*|&\verb|*|&        &\verb|*|\\
-            2005 &\verb|*|&\verb|*|&\verb|*|&\verb|*|&\verb|*|&\verb|*|\\
-            2006 &        &\verb|*|&        &\verb|*|&\verb|*|&\verb|*|\\
-            2007 &\verb|*|&        &        &\verb|*|&        &        \\
-            2008 &        &\verb|*|&        &        &        &        \\
-            2009 &\verb|*|&        &        &        &\verb|*|&        \\
-            2010 &\verb|*|&        &        &        &        &        \\
+            2002 &       &       &       &       &       &$\star$\\
+            2003 &$\star$&       &$\star$&       &$\star$&       \\
+            2004 &$\star$&$\star$&$\star$&$\star$&       &$\star$\\
+            2005 &$\star$&$\star$&$\star$&$\star$&$\star$&$\star$\\
+            2006 &       &$\star$&       &$\star$&$\star$&$\star$\\
+            2007 &$\star$&       &       &$\star$&       &       \\
+            2008 &       &$\star$&       &       &       &       \\
+            2009 &$\star$&       &       &       &$\star$&       \\
+            2010 &$\star$&       &       &       &       &       \\
             \hline
-        \end{tabular}
+        \end{tblr}
         \caption{Top Division Champion Record of Asash\={o}ry\={u} Akinori}
         \label{table} % Put \label here!
     \end{table}
