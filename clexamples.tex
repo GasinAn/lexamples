@@ -7,6 +7,10 @@
 % 中文句号显示成英文样式
 \catcode`\。=\active
 \newcommand{。}{．}
+% 中圆点 1 个汉字宽
+\newcommand{\crdot}{·}
+% 中圆点 0.5 个汉字宽
+% \newcommand{\crdot}{\hspace{-0.25\ccwd}·\hspace{-0.25\ccwd}}
 \usepackage{amsmath} % 数学符号 & 方程
 \usepackage{amssymb} % 特殊数学符号
 \usepackage{graphicx} % 图形 & 图像
@@ -97,9 +101,9 @@
     \textit{本是楷体的词被\uline{下划线}。}
     \subsection{无序列表（itemize）}
     \begin{itemize}
-        \item 约翰·希金斯
-        \item 马克·威廉姆斯
-        \item 罗尼·奥沙利文
+        \item 约翰\crdot{}希金斯
+        \item 马克\crdot{}威廉姆斯
+        \item 罗尼\crdot{}奥沙利文
     \end{itemize}
     \subsection{有序列表（enumerate）}
     \begin{enumerate}
@@ -183,7 +187,7 @@ end program hellolatex
             \hline
             运动员 & 澳网 & 法网 & 温网 & 美网 & 奥运会\\
             \hline
-            施特菲·格拉芙 & 1988 & 1988 & 1988 & 1988 & 1988 \\
+            施特菲\crdot{}格拉芙 & 1988 & 1988 & 1988 & 1988 & 1988 \\
             \hline
         \end{tblr}
         \caption{年度金满贯}
